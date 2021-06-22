@@ -42,7 +42,12 @@ module.exports = {
   },
   {{/if_eq}}
   dist: getDist(),
+  {{#if_eq type "weapp"}}
   globalObject: "global",
+  {{/if_eq}}
+  {{#if_eq type "aliapp"}}
+  globalObject: "my",
+  {{/if_eq}}
   commonsDir: "build~commons",
   useSourceMap: true,
   useCache: process.env.PRJ_ENV === "development" ? true : false,
