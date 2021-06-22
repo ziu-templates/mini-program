@@ -3,42 +3,58 @@
  */
 
 module.exports = {
-
   prompts: {
     name: {
-      type: 'string',
+      type: "string",
       required: true,
-      message: 'Project name',
+      message: "Project name",
     },
     description: {
-      type: 'string',
+      type: "string",
       required: false,
-      message: 'Project description',
-      default: 'A weapp(微信小程序) project with ziu',
+      message: "Project description",
+      default: "A weapp(微信小程序) project with ziu",
     },
     author: {
-      type: 'string',
-      message: 'Author',
+      type: "string",
+      message: "Author",
+    },
+    type: {
+      type: "list",
+      message: "请选择小程序类型",
+      choices: [
+        {
+          name: "微信小程序",
+          value: "weapp",
+          short: "Weapp",
+        },
+        {
+          name: "支付宝小程序",
+          value: "aliapp",
+          short: "aliapp",
+        },
+      ],
     },
     tab: {
-      type: 'confirm',
-      message: 'Use Tab?',
+      type: "confirm",
+      message: "Use Tab?",
     },
     gitCommitMsg: {
-      type: 'confirm',
-      message: 'Use commitlint to check commit message?(Angular Commit Message)',
+      type: "confirm",
+      message:
+        "Use commitlint to check commit message?(Angular Commit Message)",
     },
     changelog: {
-      type: 'confirm',
-      message: 'Use CHANGELOG to your project?',
+      type: "confirm",
+      message: "Use CHANGELOG to your project?",
     },
   },
   filters: {
-    'src/assets/imgs/tab.png': 'tab',
+    "src/assets/imgs/tab.png": "tab",
     // '.eslintrc.js': 'lint',
     // '.eslintignore': 'lint',
     // 'scripts/lib/webpack/loaders/eslintLoader.js': 'lint',
-    'commitlint.config.js': 'gitCommitMsg',
-    '.huskyrc': 'gitCommitMsg',
-  }
+    "commitlint.config.js": "gitCommitMsg",
+    ".huskyrc": "gitCommitMsg",
+  },
 };
