@@ -36,6 +36,7 @@ module.exports = {
       ],
     },
     tab: {
+      where: "type",
       type: "confirm",
       message: "Use Tab?",
     },

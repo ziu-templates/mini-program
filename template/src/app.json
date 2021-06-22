@@ -1,3 +1,4 @@
+{{#if_eq type "weapp"}}
 {
     "pages":[
         "pages/index/index"
@@ -30,3 +31,39 @@
     {{/tab}}
     "debug": true
 }
+{{/if_eq}}
+
+{{#if_eq type "aliapp"}}
+{
+    "pages":[
+        "pages/index/index"
+    ],
+    "networkTimeout": {
+        "request": 10000
+    },
+    "window":{
+        "defaultTitle": "Demo",
+        "titleBarColor": "#fff"
+    },
+    {{#tab}}
+    "tabBar": {
+        "items": [
+            {
+                "pagePath": "pages/index/index",
+                "icon": "./assets/imgs/tab.png",
+                "activeIcon": "./assets/imgs/tab.png",
+                "name": "tab1"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "icon": "./assets/imgs/tab.png",
+                "activeIcon": "./assets/imgs/tab.png",
+                "name": "tab2"
+            }
+        ]
+    },
+    {{/tab}}
+    "debug": true
+}
+{{/if_eq}}
+
