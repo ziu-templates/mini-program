@@ -7,7 +7,7 @@ export default class IndexController
   extends PageBase<IData>
   implements IMippWePage.ILifetime {
 
-  data: IIndexData = {
+  data: IData = {
     welcomeStr: "Index Page",
   };
 
@@ -25,7 +25,7 @@ class IndexController
   implements IMippAliPage.ILifetime
 {
 
-  data: IIndexData = {
+  data: IData = {
     welcomeStr: "Index Page",
   };
 
