@@ -42,7 +42,7 @@
         "request": 10000
     },
     "window":{
-        "defaultTitle": "Demo",
+        "defaultTitle": "{{ name }}",
         "titleBarColor": "#fff"
     },
     {{#tab}}

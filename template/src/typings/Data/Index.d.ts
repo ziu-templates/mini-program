@@ -1,3 +1,3 @@
-interface IIndexData {
+export interface IData {
   welcomeStr: string;
 }
