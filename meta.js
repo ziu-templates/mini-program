@@ -36,7 +36,7 @@ module.exports = {
       ],
     },
     tab: {
-      where: "type",
+      when: "type",
       type: "confirm",
       message: "Use Tab?",
     },
@@ -52,6 +52,8 @@ module.exports = {
   },
   filters: {
     "src/assets/imgs/tab.png": "tab",
+    "src/pages/index/index.axml": "type === 'aliapp'",
+    "src/pages/index/index.wxml": "type === 'weapp'",
     // '.eslintrc.js': 'lint',
     // '.eslintignore': 'lint',
     // 'scripts/lib/webpack/loaders/eslintLoader.js': 'lint',
