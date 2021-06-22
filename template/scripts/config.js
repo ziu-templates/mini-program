@@ -13,6 +13,7 @@ module.exports = {
     app: "src/app.json", // 该行固定格式
     outside: "src/outside/**/*/app.json",
   },
+  {{#if_eq type "weapp"}}
   entrySuffix: {
     js: "ts",
     miniJs: "wxs",
@@ -25,6 +26,21 @@ module.exports = {
     miniJs: "wxs",
     xml: "wxml",
   },
+  {{/if_eq}}
+  {{#if_eq type "aliapp"}}
+  entrySuffix: {
+    js: "ts",
+    miniJs: "sjs",
+    xml: "axml",
+    css: "scss",
+  },
+  compiledSuffix: {
+    js: "js",
+    css: "acss",
+    miniJs: "sjs",
+    xml: "axml",
+  },
+  {{/if_eq}}
   dist: getDist(),
   globalObject: "global",
   commonsDir: "build~commons",
