@@ -13,7 +13,7 @@ module.exports = {
       type: "string",
       required: false,
       message: "Project description",
-      default: "A weapp(微信小程序) project with ziu",
+      default: "A mini-program(小程序) project with ziu",
     },
     author: {
       type: "string",
