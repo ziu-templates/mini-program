@@ -1,0 +1,14 @@
+
+// Place your settings in this file to overwrite default and user settings.
+{{#if_eq type "weapp"}}
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["/app.json"],
+      "url": "http://json.abuen.com/wechatApp.json"
+    }
+  ]
+}
+{{/if_eq}}
+{{#if_eq type "aliapp"}}
+{{/if_eq}}
