@@ -1,4 +1,5 @@
 const { join } = require("path");
+const jsonfile = require("jsonfile");
 const projectConfig = require("./project.config");
 const envData = require("./getEnvData");
 
@@ -88,7 +89,7 @@ module.exports = {
 
   fallback: {},
 
-  plugins: [],
+  plugins: [miniProgramSourceMap],
 };
 
 function getDist() {
@@ -113,4 +114,22 @@ function jsonParse(jsonStr) {
   } catch (e) {
     return {};
   }
+}
+
+function miniProgramSourceMap(compiler) {
+  compiler.hooks.assetEmitted.tap(
+    "MiniProgramSourceMap",
+    (file, { content, targetPath }) => {
+      if (/\.(map)$/i.test(String(targetPath))) {
+        const json = JSON.parse(content);
+
+        json.sources.forEach((item, i) => {
+          if (/style(\/|\\|\\\\)index.(js|ts)/.test(item)) {
+            json.sourcesContent[i] = json.sourcesContent[i - 1 < 0 ? 0 : i - 1];
+          }
+        });
+        jsonfile.writeFileSync(targetPath, json, { spaces: 2 });
+      }
+    },
+  );
 }
