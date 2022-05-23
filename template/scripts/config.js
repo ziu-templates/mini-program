@@ -90,6 +90,7 @@ module.exports = {
   fallback: {},
 
   plugins: [miniProgramSourceMap],
+  ignoreEntry: ["^plugin://", "^antd-mini-rpx"],
 };
 
 function getDist() {
