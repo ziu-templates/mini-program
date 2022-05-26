@@ -91,6 +91,9 @@ module.exports = {
 
   plugins: [miniProgramSourceMap],
   ignoreEntry: ["^plugin://", "^antd-mini-rpx"],
+  {{#if_eq type "aliapp"}}
+  splitSize: null,
+  {{/if_eq}}
 };
 
 function getDist() {
