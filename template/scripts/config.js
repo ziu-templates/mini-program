@@ -2,6 +2,7 @@ const { join } = require("path");
 const jsonfile = require("jsonfile");
 const projectConfig = require("./project.config");
 const envData = require("./getEnvData");
+const autoImportGlobalLib = require("./global/globalPlugin");
 
 const root = "src";
 
@@ -89,7 +90,7 @@ module.exports = {
 
   fallback: {},
 
-  plugins: [miniProgramSourceMap],
+  plugins: [miniProgramSourceMap, ...autoImportGlobalLib({{#if_eq type "aliapp"}}"aliapp"{{/if_eq}}).plugins],
   ignoreEntry: ["^plugin://", "^antd-mini-rpx"],
   {{#if_eq type "aliapp"}}
   splitSize: null,
