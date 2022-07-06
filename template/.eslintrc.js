@@ -60,13 +60,13 @@ module.exports = {
     Behavior: true,
   },
   settings: {
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts", ".aliapp.ts", ".weapp.ts"],
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"],
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts", ".aliapp.ts", ".weapp.ts"],
     },
     "import/resolver": {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts", ".aliapp.ts", ".weapp.ts"],
       },
     },
     "import/ignore": [

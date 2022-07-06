@@ -18,7 +18,8 @@
     "noImplicitThis": true,
     "incremental": true,
     "esModuleInterop": true,
-    "noEmit": true
+    "noEmit": true,
+    "moduleSuffixes": [".ios", ".aliapp", ""]
   },
   "exclude": [
     "node_modules",
