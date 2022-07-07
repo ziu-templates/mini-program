@@ -19,7 +19,7 @@
     "incremental": true,
     "esModuleInterop": true,
     "noEmit": true,
-    "moduleSuffixes": [".ios", ".aliapp", ""]
+    "moduleSuffixes": [".weapp", ".aliapp", ""]
   },
   "exclude": [
     "node_modules",
