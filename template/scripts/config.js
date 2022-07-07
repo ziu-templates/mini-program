@@ -66,7 +66,8 @@ module.exports = {
   ignoreEntry: ["^plugin://", "^antd-mini-rpx"],
   {{#if_eq type "aliapp"}}
   splitSize: null,
-  {{/if_eq}}
+  {{/if_eq}},
+  subPackagesName: "subPackages",
 };
 
 function getDist() {
