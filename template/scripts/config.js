@@ -3,53 +3,25 @@ const jsonfile = require("jsonfile");
 const projectConfig = require("./project.config");
 const envData = require("./getEnvData");
 const autoImportGlobalLib = require("./global/globalPlugin");
+const { getSuffixConfig, getEntry } = require("ziu-server/lib/configUtils");
 
 const root = "src";
+const suffixConfig = getSuffixConfig();
 
 module.exports = {
   title: jsonParse(envData).APP_TITLE || "",
   root,
   mode: process.env.PRJ_ENV,
   id: jsonParse(envData).APP_ID || "",
-  entry: {
-    app: "src/app.json", // 该行固定格式
-    outside: "src/outside/**/*/app.json",
-  },
-  {{#if_eq type "weapp"}}
+  entry: getEntry(),
   entrySuffix: {
-    js: "ts",
-    miniJs: "wxs",
-    xml: "wxml",
-    css: "scss",
+    ...suffixConfig.entrySuffix,
   },
   compiledSuffix: {
-    js: "js",
-    css: "wxss",
-    miniJs: "wxs",
-    xml: "wxml",
+    ...suffixConfig.compiledSuffix,
   },
-  {{/if_eq}}
-  {{#if_eq type "aliapp"}}
-  entrySuffix: {
-    js: "ts",
-    miniJs: "sjs",
-    xml: "axml",
-    css: "scss",
-  },
-  compiledSuffix: {
-    js: "js",
-    css: "acss",
-    miniJs: "sjs",
-    xml: "axml",
-  },
-  {{/if_eq}}
   dist: getDist(),
-  {{#if_eq type "weapp"}}
-  globalObject: "global",
-  {{/if_eq}}
-  {{#if_eq type "aliapp"}}
-  globalObject: "my",
-  {{/if_eq}}
+  globalObject: suffixConfig.global,
   commonsDir: "build~commons",
   useSourceMap: true,
   useCache: process.env.PRJ_ENV === "development" ? true : false,
@@ -100,11 +72,11 @@ module.exports = {
 function getDist() {
 
   const distList = {
-    development: "dist/dev",
-    testing: "dist/testing",
-    staging: "dist/staging",
-    production: "dist/release",
-  }
+    development: `dist/dev/${process.env.ZIU_BUILD_PLATFORM}`,
+    testing: `dist/testing/${process.env.ZIU_BUILD_PLATFORM}`,
+    staging: `dist/staging/${process.env.ZIU_BUILD_PLATFORM}`,
+    production: `dist/release/${process.env.ZIU_BUILD_PLATFORM}`,
+  };
 
   return join(process.cwd(), distList[process.env.PRJ_ENV]);
 }
