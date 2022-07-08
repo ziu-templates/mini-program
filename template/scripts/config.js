@@ -62,7 +62,7 @@ module.exports = {
 
   fallback: {},
 
-  plugins: [miniProgramSourceMap, ...autoImportGlobalLib({{#if_eq type "aliapp"}}"aliapp"{{/if_eq}}).plugins],
+  plugins: [miniProgramSourceMap, ...autoImportGlobalLib(process.env.ZIU_BUILD_PLATFORM).plugins],
   ignoreEntry: ["^plugin://", "^antd-mini-rpx"],
   {{#if_eq type "aliapp"}}
   splitSize: null,
