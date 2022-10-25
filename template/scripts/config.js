@@ -20,6 +20,11 @@ module.exports = {
   compiledSuffix: {
     ...suffixConfig.compiledSuffix,
   },
+  script: {
+    useBabelInTS: true,
+    babelPresetsModules: "commonjs",
+    useLogBeautify: true,
+  },
   dist: getDist(),
   globalObject: suffixConfig.global,
   commonsDir: "build~commons",
