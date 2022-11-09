@@ -7,6 +7,7 @@ const { getSuffixConfig, getEntry } = require("ziu-server/lib/configUtils");
 
 const root = "src";
 const suffixConfig = getSuffixConfig();
+const platform = process.env.ZIU_BUILD_PLATFORM;
 
 module.exports = {
   title: jsonParse(envData).APP_TITLE || "",
@@ -34,8 +35,8 @@ module.exports = {
   envData,
 
   mergeProjectConfig: true,
-  projectConfigName: "project.config.json",
-  projectConfigPath: join(getDist(), "project.config.json"),
+  projectConfigName: platform === "aliapp" ? "mini.project.json" : "project.config.json",
+  projectConfigPath: join(getDist(), platform === "aliapp" ? "mini.project.json" : "project.config.json"),
   otherConfig: [{
     from: join(getDist(), "project.private.config.json"),
     to: join(sourceRoot(root), "project.private.config.json"),
