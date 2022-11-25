@@ -25,7 +25,7 @@ module.exports = {
     useBabelInTS: true,
     babelPresetsModules: "commonjs",
     useLogBeautify: true,
-    babelPlugins: isMockEnv ? ["babel-plugin-aff-mock"] : [],
+    babelPlugins: isMockEnv() ? ["babel-plugin-aff-mock"] : [],
   },
   dist: getDist(),
   globalObject: suffixConfig.global,
