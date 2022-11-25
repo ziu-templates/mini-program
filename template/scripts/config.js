@@ -3,7 +3,7 @@ const jsonfile = require("jsonfile");
 const projectConfig = require("./project.config");
 const envData = require("./getEnvData");
 const autoImportGlobalLib = require("./global/globalPlugin");
-const { getSuffixConfig, getEntry } = require("ziu-server/lib/configUtils");
+const { getSuffixConfig, getEntry, isMockEnv } = require("ziu-server/lib/configUtils");
 
 const root = "src";
 const suffixConfig = getSuffixConfig();
@@ -25,6 +25,7 @@ module.exports = {
     useBabelInTS: true,
     babelPresetsModules: "commonjs",
     useLogBeautify: true,
+    babelPlugins: isMockEnv ? ["babel-plugin-aff-mock"] : [],
   },
   dist: getDist(),
   globalObject: suffixConfig.global,
