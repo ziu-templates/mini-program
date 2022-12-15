@@ -27,6 +27,7 @@ module.exports = {
     useLogBeautify: true,
     babelPlugins: isMockEnv() ? ["babel-plugin-aff-mock"] : [],
   },
+  alias: {},
   dist: getDist(),
   globalObject: suffixConfig.global,
   commonsDir: "build~commons",
