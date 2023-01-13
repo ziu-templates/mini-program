@@ -1,7 +1,7 @@
 {{#if_eq type "weapp"}}
 {
     "pages":[
-        "pages/index/index"
+        "app/main/pages/index/index"
     ],
     "networkTimeout": {
         "request": 10000
@@ -15,13 +15,13 @@
     "tabBar": {
         "list": [
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "app/main/pages/index/index",
                 "iconPath": "./assets/imgs/tab.png",
                 "selectedIconPath": "./assets/imgs/tab.png",
                 "text": "tab1"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "app/main/pages/index/index",
                 "iconPath": "./assets/imgs/tab.png",
                 "selectedIconPath": "./assets/imgs/tab.png",
                 "text": "tab2"
@@ -36,7 +36,7 @@
 {{#if_eq type "aliapp"}}
 {
     "pages":[
-        "pages/index/index"
+        "app/main/pages/index/index"
     ],
     "networkTimeout": {
         "request": 10000
@@ -49,13 +49,13 @@
     "tabBar": {
         "items": [
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "app/main/pages/index/index",
                 "icon": "./assets/imgs/tab.png",
                 "activeIcon": "./assets/imgs/tab.png",
                 "name": "tab1"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "app/main/pages/index/index",
                 "icon": "./assets/imgs/tab.png",
                 "activeIcon": "./assets/imgs/tab.png",
                 "name": "tab2"
