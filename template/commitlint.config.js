@@ -33,6 +33,8 @@ module.exports = {
         'revert',
         'style',
         'test',
+        "release",
+        "review",
       ],
     ],
   },

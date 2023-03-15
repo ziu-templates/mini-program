@@ -28,7 +28,6 @@
         {{/gitCommitMsg}}
         {{#changelog}}
         "cl": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1000",
-        "postversion": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2 && git add CHANGELOG.md package.json && git add -u",
         {{/changelog}}
         "dev": "ziu-server --config scripts/config.js -- development",
         "dev:mock": "ziu-server --config scripts/config.js --mock -- development",
