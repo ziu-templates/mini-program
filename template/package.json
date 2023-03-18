@@ -46,6 +46,7 @@
         "eslint-config-ziu": "^1.1.4",
         "eslint-plugin-import": "^2.22.1",
         "stylelint-config-ziu": "^1.1.1",
+        "babel-plugin-aff-mock": "^2.0.0",
         "cross-env": "^7.0.3",
         "globby": "^11.0.3",
         "lodash.merge": "^4.6.2",
