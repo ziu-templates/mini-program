@@ -19,6 +19,8 @@
     "incremental": true,
     "esModuleInterop": true,
     "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "moduleSuffixes": [".weapp", ".aliapp", ""],
     "paths": {
       "@/*": ["src/*"]

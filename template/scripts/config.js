@@ -9,6 +9,7 @@ const root = "src";
 const suffixConfig = getSuffixConfig();
 const platform = process.env.ZIU_BUILD_PLATFORM;
 
+/** @type {import("ziu-server/typings").IZiuServerConfig} */
 module.exports = {
   title: jsonParse(envData).APP_TITLE || "",
   root,
