@@ -69,6 +69,7 @@
         "mipp-api-typing": "^1.1.0",
         "git-helps": "0.0.3",
         "rimraf": "^3.0.2",
+        "eslint": "^7.32.0",
         "ziu-server": "^1.13.2"
     },
     "engines": {

@@ -67,6 +67,7 @@ module.exports = {
     "import/resolver": {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts", ".aliapp.ts", ".weapp.ts"],
+        moduleDirectory: ["node_modules", "local_modules"],
       },
       alias: {
         map: [["@", "./src"]],
@@ -74,6 +75,7 @@ module.exports = {
       },
     },
     "import/ignore": [
+      "node_modules",
       "node_modules",
       "\\.(coffee|scss|css|less|hbs|svg|json)$",
     ],

@@ -6,3 +6,4 @@ src/customer.d.ts
 __tests__/**/*.js
 tests/**/*.js
 **/jest.config.js
+local_modules/
